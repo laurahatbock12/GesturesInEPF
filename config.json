@@ -1,0 +1,10 @@
+{
+    "project_folder": "/media1/data/andy/laura_disk/EmbodiedProductiveFailure",
+    "reference_folder": "/media1/data/andy/laura_disk/EPF_PL_DA",
+    "model_path": "/home/andy/Documents/FingerTap/models",
+    "conda_envs": {
+        "main": "/home/andy/anaconda3/envs/deeplabcut",
+        "da3": "/home/andy/anaconda3/envs/da3"
+    },
+    "visualization_output_dir": "visualization/output"
+}

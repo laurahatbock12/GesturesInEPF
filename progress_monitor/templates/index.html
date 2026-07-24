@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EPF Gesture Analysis — Processing Monitor</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="layout">
+  <header class="topbar">
+    <div>
+      <h1>EPF Gesture Analysis — Processing Monitor</h1>
+      <div class="meta"><code id="project-folder">…</code></div>
+    </div>
+    <div class="topbar-right">
+      <span id="scan-meta">Loading…</span>
+      <button class="refresh" id="refresh-btn">Refresh</button>
+    </div>
+  </header>
+
+  <nav class="sidebar" id="sidebar">
+    <h2>Schools</h2>
+    <div id="sidebar-links"></div>
+  </nav>
+
+  <main>
+    <section class="overview">
+      <h2 class="section-title">Overview</h2>
+      <div class="tiles" id="tiles"></div>
+    </section>
+
+    <section class="overview">
+      <h2 class="section-title">By school</h2>
+      <div class="summary-table-wrap">
+        <table class="summary" id="summary-table">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Detail</h2>
+      <div class="controls">
+        <input class="search" id="search" type="text" placeholder="Filter by school, participant, or recording…">
+        <select class="status-filter" id="status-filter">
+          <option value="all">All recordings</option>
+          <option value="complete">Fully complete only</option>
+          <option value="incomplete">Has incomplete stage</option>
+        </select>
+        <div id="stage-chip"></div>
+        <div class="spacer"></div>
+        <button class="link-btn" id="expand-all">Expand all</button>
+        <button class="link-btn" id="collapse-all">Collapse all</button>
+      </div>
+      <div id="tree"></div>
+      <div class="empty-state hidden" id="empty-state">No recordings match the current filters.</div>
+    </section>
+
+    <footer class="note">Auto-refreshes from the server cache; the filesystem is only rescanned in the background every few seconds so the page stays snappy.</footer>
+  </main>
+</div>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

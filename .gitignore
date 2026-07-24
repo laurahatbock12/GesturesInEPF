@@ -1,0 +1,8 @@
+.qodo
+__pycache__
+output
+CLAUDE.md
+graphify-out/
+*.mp4
+logs
+cache
